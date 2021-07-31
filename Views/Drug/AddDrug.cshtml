@@ -1,0 +1,19 @@
+@{
+    ViewData["Title"] = "Drug Page";
+}
+<h1>ADD drug</h1>
+<form action="/drug/SaveDrug" method="get">
+    <div class="mp-3">
+        <label for="Name" class="form-label">Name</label>
+        <input type="text" class="form-control" id="Name" name ="Name">
+    </div>
+    <div class="mp-3">
+        <label for="Age" class="form-label">so luong</label>
+        <input type="text" class="form-control" id="soLuong" name ="soLuong">
+    </div>
+    <div class="mp-3">
+        <label for="Address" class="form-label">nha san xuat</label>
+        <input type="text" class="form-control" id="nhaSx" name ="nhaSx">
+    </div>
+    <button type="submit" class="btn btn-primary mt-4"> ADD </button>
+</form>

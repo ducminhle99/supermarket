@@ -1,0 +1,44 @@
+@using Drugstore.Models
+@{
+    ViewData["Title"] = "Drug Page";
+    List<Drug> drugs = Model;
+}
+<h1>Welcome to Drugs Page</h1>
+<p>danh sach cac loai thuoc</p>
+
+<form action="/drug/SearchDrug" method="get">
+<div class="input-group">
+  <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" id="name" name ="name"
+    aria-describedby="search-addon" />
+  <button type="submit" class="btn btn-outline-primary">search</button>
+</div>
+    
+</form>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>so luong</th>
+            <th> nha san xuat</th>
+            <th><a href="/drug/AddDrug" class="btn btn-primary">them thuoc moi</a></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var drug in drugs)
+        {
+            <tr>
+                <td>@drug.Id</td>
+                <td>@drug.Name</td>
+                <td>@drug.soLuong</td>
+                <td>@drug.nhaSX</td>
+                <td>
+                    <a href="/drug/EditDrug?Id=@drug.Id" class="btn btn-primary">Edit</a>
+                    <a href="/drug/Delete?Id=@drug.Id" class="btn btn-danger">Delete</a>
+                </td>
+                <td></td>
+            </tr>
+        }
+    </tbody>
+</table>
